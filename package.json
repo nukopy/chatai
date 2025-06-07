@@ -3,7 +3,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"before-push": "pnpm run check && pnpm run typecheck && pnpm run build",
+		"before-commit": "pnpm run check && pnpm run typecheck && pnpm run build",
 		"build": "react-router build",
 		"cf-typegen": "wrangler types",
 		"check": "biome check --write .",
