@@ -19,13 +19,13 @@
 ### Frontend
 
 - **Language**: TypeScript
-- **Framework**: Remix
+- **Framework**: React Router v7
 - **CSS**: Tailwind CSS + daisyUI
-- **State Management**: Remix built-in (loader/action)
+- **State Management**: React Router v7 built-in (loader/action)
 
 ### Backend
 
-- **Framework**: Remix (Full-stack)
+- **Framework**: React Router v7 (Full-stack)
 - **Runtime**: Cloudflare Workers (local development first)
 
 ### AI Integration
@@ -39,11 +39,11 @@
 ```
 ┌─────────────────┐
 │   Browser       │
-│  (Remix SPA)    │
+│ (React Router)  │
 └────────┬────────┘
          │
 ┌────────┴────────┐
-│  Remix Server   │
+│ React Router v7 │
 │  (TypeScript)   │
 └────────┬────────┘
          │
@@ -108,41 +108,41 @@
 
 ```bash
 # 依存関係のインストール
-npm install
+pnpm install
 
 # 開発サーバーの起動
-npm run dev
+pnpm run dev
 
 # プロダクション用ビルド
-npm run build
+pnpm run build
 
 # プロダクション版の実行
-npm start
+pnpm start
 
 # 型チェック
-npm run typecheck
+pnpm run typecheck
 
 # リンティング
-npm run lint
+pnpm run lint
 ```
 
 ## プロジェクト構成
 
 ```
 /
-├── app/              # Remix アプリケーションファイル
+├── app/              # React Router v7 アプリケーションファイル
 │   ├── routes/       # ルートコンポーネント
 │   ├── components/   # 再利用可能なコンポーネント
 │   ├── lib/          # ユーティリティとヘルパー
 │   └── root.tsx      # ルートコンポーネント
 ├── public/           # 静的アセット
-└── remix.config.js   # Remix 設定
+└── react-router.config.ts   # React Router v7 設定
 ```
 
 ## 開発ガイドライン
 
 1. 新しいファイルはすべて TypeScript を使用
-2. ルーティングとデータ読み込みは Remix の規約に従う
+2. ルーティングとデータ読み込みは React Router v7 の規約に従う
 3. Tailwind CSS ユーティリティクラスと daisyUI コンポーネントを使用
 4. AI とのやり取りでエラーを適切に処理
 5. コンポーネントは焦点を絞り、再利用可能に保つ
@@ -162,10 +162,10 @@ npm run lint
 
 ```bash
 # Cloudflare Workers へのデプロイ
-npm run deploy
+pnpm run deploy
 
 # プレビューデプロイ
-npm run preview
+pnpm run preview
 ```
 
 ## Git 規約
