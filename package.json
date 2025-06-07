@@ -6,6 +6,7 @@
   "scripts": {
     "build": "remix vite:build",
     "deploy": "wrangler pages deploy ./build/client",
+    "deploy:preview": "wrangler pages deploy ./build/client --preview",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "wrangler pages dev ./build/client",
