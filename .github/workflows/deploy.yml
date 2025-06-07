@@ -1,8 +1,9 @@
-name: Deploy Worker
+name: Deploy to Cloudflare Workers
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
