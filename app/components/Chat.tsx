@@ -17,7 +17,9 @@ export function Chat() {
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Need to scroll when messages change
 	useEffect(() => {
-		messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+		if (typeof window !== "undefined" && messagesEndRef.current?.scrollIntoView) {
+			messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+		}
 	}, [messages]);
 
 	const handleSubmit = async (e: React.FormEvent) => {
@@ -130,7 +132,7 @@ export function Chat() {
 						} group`}
 					>
 						{message.role === "user" && (
-							<div className="max-w-[80%] bg-gray-800 text-white p-4 rounded-2xl ml-auto">
+							<div data-testid="user-message" className="max-w-[80%] bg-gray-800 text-white p-4 rounded-2xl ml-auto">
 								<div className="whitespace-pre-wrap">{message.content}</div>
 							</div>
 						)}
