@@ -31,9 +31,10 @@
 
 ### AI Integration
 
-- **Provider**: Amazon Bedrock
-- **Model**: Claude 3.5 Sonnet
-- **SDK**: Anthropic SDK
+- **Provider**: Cloudflare Workers AI
+- **Model**: Claude 3.5 Sonnet (Workers AI)
+- **SDK**: Workers AI REST API
+- **Documentation**: [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/)
 
 ## アーキテクチャ
 
@@ -49,46 +50,46 @@
 └────────┬────────┘
          │
 ┌────────┴────────┐
-│ Amazon Bedrock  │
-│  (Claude API)   │
+│ Cloudflare      │
+│  Workers AI     │
 └─────────────────┘
 ```
 
 ## 機能要件（MVP 版）
 
-### 1. 基本的なチャット機能 ✅
+### 1. 基本的なチャット機能
 
-- メッセージの送信
-- メッセージの受信
-- メッセージの表示（チャット履歴）
-- リアルタイム表示更新
+- [x] メッセージの送信
+- [x] メッセージの受信
+- [x] メッセージの表示（チャット履歴）
+- [x] リアルタイム表示更新
 
-### 2. ユーザーインターフェース ✅
+### 2. ユーザーインターフェース
 
-- メッセージ入力フィールド
-- 送信ボタン
-- チャット表示エリア
-- レスポンシブデザイン対応（Tailwind CSS）
-- 美しい UI コンポーネント（daisyUI）
+- [x] メッセージ入力フィールド
+- [x] 送信ボタン
+- [x] チャット表示エリア
+- [x] レスポンシブデザイン対応（Tailwind CSS）
+- [x] 美しい UI コンポーネント（daisyUI）
 
-### 3. メンター機能 ✅
+### 3. メンター機能
 
 - **メンターの人格設定**:
-  - 名前の設定
-  - 性格・話し方の設定
-  - 専門分野の設定
+  - [ ] 名前の設定
+  - [ ] 性格・話し方の設定
+  - [ ] 専門分野の設定
 - **メンタルに寄り添う会話機能**:
-  - 共感的な応答
-  - 励ましとサポート
-  - 建設的なアドバイス
+  - [ ] 共感的な応答
+  - [ ] 励ましとサポート
+  - [ ] 建設的なアドバイス
 
-### 4. AI 統合機能 ✅
+### 4. AI 統合機能
 
-- Amazon Bedrock 経由での Claude 3.5 Sonnet 連携
-- Anthropic SDK の利用
-- プロンプトエンジニアリング
-- レスポンス処理
-- エラーハンドリング
+- [ ] Cloudflare Workers AI 経由での Claude 3.5 Sonnet 連携
+- [ ] Workers AI REST API の利用（ストリーミング対応）
+- [ ] プロンプトエンジニアリング
+- [ ] ストリーミングレスポンス処理
+- [ ] エラーハンドリング
 
 ## 将来の拡張機能
 
