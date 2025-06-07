@@ -6,14 +6,15 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
+    "deploy": "wrangler deploy",
+    "deploy:preview": "wrangler deploy --env preview",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/index.js",
+    "start": "wrangler dev",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@remix-run/node": "^2.16.8",
+    "@remix-run/cloudflare": "^2.16.8",
     "@remix-run/react": "^2.16.8",
-    "@remix-run/serve": "^2.16.8",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -36,7 +37,8 @@
     "tailwindcss": "^3.4.4",
     "typescript": "^5.1.6",
     "vite": "^6.0.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "wrangler": "^3.0.0"
   },
   "engines": {
     "node": ">=20.0.0"

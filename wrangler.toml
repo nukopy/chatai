@@ -1,0 +1,25 @@
+name = "chatai"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "chatai"
+# Uncomment and configure when custom domain is ready
+# routes = [
+#   { pattern = "chatai.nukopy.dev", custom_domain = true }
+# ]
+
+[env.preview] 
+name = "chatai-preview"
+
+[vars]
+NODE_ENV = "production"
+
+[env.production.vars]
+NODE_ENV = "production"
+
+[env.preview.vars]
+NODE_ENV = "preview"
+
+# Worker configuration
+main = "./build/server/index.js"
