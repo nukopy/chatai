@@ -1,22 +1,26 @@
 {
-	"permissions": {
-		"allow": [
-			"Bash(rm:*)",
-			"Bash(git add:*)",
-			"Bash(git push:*)",
-			"Bash(gh auth refresh:*)",
-			"Bash(npm run build:*)",
-			"Bash(npm start)",
-			"Bash(ls:*)",
-			"Bash(npx wrangler dev:*)",
-			"Bash(npm run dev:*)",
-			"Bash(npx create-remix:*)",
-			"Bash(mv:*)",
-			"Bash(npm install)",
-			"WebFetch(domain:github.com)",
-			"Bash(mkdir:*)",
-			"Bash(pnpm run check:*)"
-		],
-		"deny": []
-	}
+  "permissions": {
+    "allow": [
+      "Bash(rm:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(gh auth refresh:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm start)",
+      "Bash(ls:*)",
+      "Bash(npx wrangler dev:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx create-remix:*)",
+      "Bash(mv:*)",
+      "Bash(npm install)",
+      "WebFetch(domain:github.com)",
+      "Bash(mkdir:*)",
+      "Bash(pnpm run check:*)",
+      "Bash(pnpm add:*)",
+      "WebFetch(domain:www.mof-mof.co.jp)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm run:*)"
+    ],
+    "deny": []
+  }
 }
