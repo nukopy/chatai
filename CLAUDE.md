@@ -22,6 +22,7 @@
 - **Framework**: React Router v7
 - **CSS**: Tailwind CSS + daisyUI
 - **State Management**: React Router v7 built-in (loader/action)
+- **UI Reference**: [daisyUI llms.txt](./docs/daisyUI.llms.txt) - UIコンポーネント実装時の参考
 
 ### Backend
 
@@ -181,5 +182,5 @@ pnpm run preview
 求められたことを実行する。それ以上でも以下でもない。
 目標達成に絶対に必要でない限り、ファイルを作成してはならない。
 新しいファイルを作成するよりも、既存のファイルを編集することを常に優先する。
-ドキュメントファイル（*.md）や README ファイルを積極的に作成してはならない。ユーザーが明示的に要求した場合のみドキュメントファイルを作成する。
+ドキュメントファイル（\*.md）や README ファイルを積極的に作成してはならない。ユーザーが明示的に要求した場合のみドキュメントファイルを作成する。
 .claude ディレクトリのコードを変更する場合は、関連する CLAUDE.md の更新と合わせて、必ず同じコミットでそれらの変更をコミットする。
