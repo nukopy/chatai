@@ -11,6 +11,7 @@ export function Chat() {
 	const [messages, setMessages] = useState<Message[]>([]);
 	const [inputValue, setInputValue] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
+	const [isComposing, setIsComposing] = useState(false);
 	const textareaRef = useRef<HTMLTextAreaElement>(null);
 	const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -49,10 +50,18 @@ export function Chat() {
 	};
 
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-		if (e.key === "Enter" && !e.shiftKey) {
+		if (e.key === "Enter" && !e.shiftKey && !isComposing) {
 			e.preventDefault();
 			handleSubmit(e);
 		}
+	};
+
+	const handleCompositionStart = () => {
+		setIsComposing(true);
+	};
+
+	const handleCompositionEnd = () => {
+		setIsComposing(false);
 	};
 
 	return (
@@ -185,6 +194,8 @@ export function Chat() {
 							value={inputValue}
 							onChange={(e) => setInputValue(e.target.value)}
 							onKeyDown={handleKeyDown}
+							onCompositionStart={handleCompositionStart}
+							onCompositionEnd={handleCompositionEnd}
 							placeholder="メッセージを入力してください..."
 							rows={1}
 							className="flex-1 bg-transparent text-white placeholder-gray-400 border-none outline-none resize-none min-h-[24px] max-h-32"
