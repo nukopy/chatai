@@ -1,34 +1,40 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+全て日本語で書いてください。
 
-## Project Overview
+このファイルは、Claude Code (claude.ai/code) がこのリポジトリで作業する際のガイダンスを提供します。
 
-個人向けメンタリングツールとして、AIメンターとの対話を通じて利用者のメンタルケアと成長をサポートするチャットアプリケーションです。
+## プロジェクト概要
+
+個人向けメンタリングツールとして、AI メンターとの対話を通じて利用者のメンタルケアと成長をサポートするチャットアプリケーションです。
 
 ### Purpose
-- **Vision**: パーソナライズされたメンタリングサービスの提供
-- **Mission**: AI技術を活用した対話型メンタリング体験の実現
-- **Value**: 24時間対応、個人最適化、プライバシー配慮
 
-## Technology Stack
+- **Vision**: パーソナライズされたメンタリングサービスの提供
+- **Mission**: AI 技術を活用した対話型メンタリング体験の実現
+- **Value**: 24 時間対応、個人最適化、プライバシー配慮
+
+## 技術スタック
 
 ### Frontend
+
 - **Language**: TypeScript
 - **Framework**: Remix
 - **CSS**: Tailwind CSS + daisyUI
 - **State Management**: Remix built-in (loader/action)
 
 ### Backend
+
 - **Framework**: Remix (Full-stack)
 - **Runtime**: Cloudflare Workers (local development first)
 
 ### AI Integration
+
 - **Provider**: Amazon Bedrock
 - **Model**: Claude 3.5 Sonnet
 - **SDK**: Anthropic SDK
 
-## Architecture
+## アーキテクチャ
 
 ```
 ┌─────────────────┐
@@ -47,22 +53,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 └─────────────────┘
 ```
 
-## 機能要件（MVP版）
+## 機能要件（MVP 版）
 
 ### 1. 基本的なチャット機能 ✅
+
 - メッセージの送信
 - メッセージの受信
 - メッセージの表示（チャット履歴）
 - リアルタイム表示更新
 
 ### 2. ユーザーインターフェース ✅
+
 - メッセージ入力フィールド
 - 送信ボタン
 - チャット表示エリア
 - レスポンシブデザイン対応（Tailwind CSS）
-- 美しいUIコンポーネント（daisyUI）
+- 美しい UI コンポーネント（daisyUI）
 
 ### 3. メンター機能 ✅
+
 - **メンターの人格設定**:
   - 名前の設定
   - 性格・話し方の設定
@@ -72,9 +81,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - 励ましとサポート
   - 建設的なアドバイス
 
-### 4. AI統合機能 ✅
-- Amazon Bedrock経由でのClaude 3.5 Sonnet連携
-- Anthropic SDKの利用
+### 4. AI 統合機能 ✅
+
+- Amazon Bedrock 経由での Claude 3.5 Sonnet 連携
+- Anthropic SDK の利用
 - プロンプトエンジニアリング
 - レスポンス処理
 - エラーハンドリング
@@ -82,90 +92,94 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 将来の拡張機能
 
 ### Phase 2: データ管理
+
 - [ ] 会話履歴の永続化
 - [ ] 会話のエクスポート
 - [ ] セッション管理
 
 ### Phase 3: 高度な機能
+
 - [ ] ユーザー認証
 - [ ] 複数のメンター管理
 - [ ] 会話の分析・インサイト
 - [ ] マークダウン対応
 
-## Development Commands
+## 開発コマンド
 
 ```bash
-# Install dependencies
+# 依存関係のインストール
 npm install
 
-# Run development server
+# 開発サーバーの起動
 npm run dev
 
-# Build for production
+# プロダクション用ビルド
 npm run build
 
-# Run production build
+# プロダクション版の実行
 npm start
 
-# Type checking
+# 型チェック
 npm run typecheck
 
-# Linting
+# リンティング
 npm run lint
 ```
 
-## Project Structure
+## プロジェクト構成
 
 ```
 /
-├── app/              # Remix application files
-│   ├── routes/       # Route components
-│   ├── components/   # Reusable components
-│   ├── lib/          # Utilities and helpers
-│   └── root.tsx      # Root component
-├── public/           # Static assets
-└── remix.config.js   # Remix configuration
+├── app/              # Remix アプリケーションファイル
+│   ├── routes/       # ルートコンポーネント
+│   ├── components/   # 再利用可能なコンポーネント
+│   ├── lib/          # ユーティリティとヘルパー
+│   └── root.tsx      # ルートコンポーネント
+├── public/           # 静的アセット
+└── remix.config.js   # Remix 設定
 ```
 
-## Development Guidelines
+## 開発ガイドライン
 
-1. Use TypeScript for all new files
-2. Follow Remix conventions for routing and data loading
-3. Use Tailwind CSS utility classes with daisyUI components
-4. Handle errors gracefully in AI interactions
-5. Keep components focused and reusable
+1. 新しいファイルはすべて TypeScript を使用
+2. ルーティングとデータ読み込みは Remix の規約に従う
+3. Tailwind CSS ユーティリティクラスと daisyUI コンポーネントを使用
+4. AI とのやり取りでエラーを適切に処理
+5. コンポーネントは焦点を絞り、再利用可能に保つ
 
-## Deployment
+## デプロイメント
 
-### CI/CD Pipeline
+### CI/CD パイプライン
+
 - **GitHub Actions**: 自動デプロイメントワークフロー
-- **Trigger**: mainブランチへのpush
+- **Trigger**: main ブランチへの push
 - **Platform**: Cloudflare Workers
 - **Required Secrets**:
   - `CLOUDFLARE_API_TOKEN`
   - `CLOUDFLARE_ACCOUNT_ID`
 
-### Deployment Commands
+### デプロイメントコマンド
 
 ```bash
-# Deploy to Cloudflare Workers
+# Cloudflare Workers へのデプロイ
 npm run deploy
 
-# Preview deployment
+# プレビューデプロイ
 npm run preview
 ```
 
-## Git Conventions
+## Git 規約
 
-1. **コミット粒度**: 1コミット = 1機能/1タスク
+1. **コミット粒度**: 1 コミット = 1 機能/1 タスク
 2. **ステージング**: `git add -A`は避け、関連ファイルのみを選択的にステージング
 3. **コミットメッセージ**: 変更内容と目的を明確に記載
 4. **ブランチ戦略**: 機能ごとにブランチを作成（必要に応じて）
-5. **CLAUDE.md更新**: .claude配下のコード変更時は必ずCLAUDE.mdも同時に更新・コミット
+5. **CLAUDE.md 更新**: .claude 配下のコード変更時は必ず CLAUDE.md も同時に更新・コミット
 
-# important-instruction-reminders
-Do what has been asked; nothing more, nothing less.
-NEVER create files unless they're absolutely necessary for achieving your goal.
-ALWAYS prefer editing an existing file to creating a new one.
-NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
-When changing code in .claude directory, ALWAYS commit those changes along with any related CLAUDE.md updates in the same commit.
+# 重要な指示リマインダー
+
+求められたことを実行する。それ以上でも以下でもない。
+目標達成に絶対に必要でない限り、ファイルを作成してはならない。
+新しいファイルを作成するよりも、既存のファイルを編集することを常に優先する。
+ドキュメントファイル（*.md）や README ファイルを積極的に作成してはならない。ユーザーが明示的に要求した場合のみドキュメントファイルを作成する。
+.claude ディレクトリのコードを変更する場合は、関連する CLAUDE.md の更新と合わせて、必ず同じコミットでそれらの変更をコミットする。
