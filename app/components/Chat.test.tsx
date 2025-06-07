@@ -81,7 +81,9 @@ describe("Chat Component", () => {
 		fireEvent.keyDown(input, { key: "Enter", shiftKey: true });
 
 		// Message should not be sent (should not appear in message area with proper styling)
-		expect(screen.queryByText("改行テスト")?.closest('.justify-end')).not.toBeInTheDocument();
+		expect(
+			screen.queryByText("改行テスト")?.closest(".justify-end"),
+		).not.toBeInTheDocument();
 		// Input should still have the value
 		expect(input).toHaveValue("改行テスト");
 	});
@@ -154,7 +156,6 @@ describe("Chat Component", () => {
 		);
 	});
 
-
 	test("displays user and AI messages with correct styling", async () => {
 		render(<Chat />);
 		const input = screen.getByPlaceholderText(
@@ -199,7 +200,9 @@ describe("Chat Component", () => {
 			const userMessages = screen.getAllByTestId("user-message");
 			expect(userMessages).toHaveLength(1);
 			expect(screen.getByText("重複テスト")).toBeInTheDocument();
-			expect(screen.queryByText("重複テスト2")?.closest('.justify-end')).not.toBeInTheDocument();
+			expect(
+				screen.queryByText("重複テスト2")?.closest(".justify-end"),
+			).not.toBeInTheDocument();
 		});
 	});
 });

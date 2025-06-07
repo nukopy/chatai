@@ -17,7 +17,10 @@ export function Chat() {
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Need to scroll when messages change
 	useEffect(() => {
-		if (typeof window !== "undefined" && messagesEndRef.current?.scrollIntoView) {
+		if (
+			typeof window !== "undefined" &&
+			messagesEndRef.current?.scrollIntoView
+		) {
 			messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
 		}
 	}, [messages]);
@@ -132,7 +135,10 @@ export function Chat() {
 						} group`}
 					>
 						{message.role === "user" && (
-							<div data-testid="user-message" className="max-w-[80%] bg-gray-800 text-white p-4 rounded-2xl ml-auto">
+							<div
+								data-testid="user-message"
+								className="max-w-[80%] bg-gray-800 text-white p-4 rounded-2xl ml-auto"
+							>
 								<div className="whitespace-pre-wrap">{message.content}</div>
 							</div>
 						)}
