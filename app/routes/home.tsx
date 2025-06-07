@@ -1,10 +1,10 @@
-import { Welcome } from "../welcome/welcome";
+import Chat from "../components/Chat";
 import type { Route } from "./+types/home";
 
 export function meta(_args: Route.MetaArgs) {
 	return [
-		{ title: "New React Router App" },
-		{ name: "description", content: "Welcome to React Router!" },
+		{ title: "ChatAI - AIメンタリングチャット" },
+		{ name: "description", content: "AI メンターとの対話を通じてメンタルケアと成長をサポートするチャットアプリケーション" },
 	];
 }
 
@@ -13,5 +13,5 @@ export function loader({ context }: Route.LoaderArgs) {
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-	return <Welcome message={loaderData.message} />;
+	return <Chat />;
 }
