@@ -143,7 +143,10 @@ export function Chat() {
 							</div>
 						)}
 						{message.role === "assistant" && (
-							<div className="max-w-[70%] text-white p-4">
+							<div
+								data-testid="assistant-message"
+								className="max-w-[70%] text-white p-4"
+							>
 								<div className="whitespace-pre-wrap">{message.content}</div>
 							</div>
 						)}
