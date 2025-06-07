@@ -19,7 +19,8 @@
 			"Bash(pnpm add:*)",
 			"WebFetch(domain:www.mof-mof.co.jp)",
 			"Bash(pnpm test:*)",
-			"Bash(pnpm run:*)"
+			"Bash(pnpm run:*)",
+			"Bash(pnpm exec wrangler:*)"
 		],
 		"deny": []
 	}
