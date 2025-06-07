@@ -1,0 +1,128 @@
+# daisyUI 5
+
+daisyUI 5 is a CSS library for Tailwind CSS 4. It adds class names for components.
+
+## Installation
+
+Requires Tailwind CSS 4.
+
+```
+npm i -D daisyui@latest
+```
+
+Add to your CSS file:
+
+```css
+@plugin "daisyui";
+```
+
+## How to use
+
+Use daisyUI class names to style your components. Then use Tailwind CSS utility classes to customize them.
+
+daisyUI class names:
+- `btn` - Button component
+- `card` - Card component
+- `modal` - Modal component
+- `input` - Input component
+- `select` - Select component
+- `textarea` - Textarea component
+- `checkbox` - Checkbox component
+- `radio` - Radio component
+- `toggle` - Toggle component
+- `range` - Range slider component
+- `progress` - Progress bar component
+- `loading` - Loading spinner component
+- `alert` - Alert component
+- `badge` - Badge component
+- `breadcrumbs` - Breadcrumbs component
+- `carousel` - Carousel component
+- `chat` - Chat component
+- `collapse` - Collapse component
+- `dropdown` - Dropdown component
+- `menu` - Menu component
+- `navbar` - Navbar component
+- `pagination` - Pagination component
+- `steps` - Steps component
+- `tab` - Tab component
+- `table` - Table component
+- `timeline` - Timeline component
+- `tooltip` - Tooltip component
+
+## Colors
+
+daisyUI provides semantic color names:
+- `primary` - Primary color
+- `secondary` - Secondary color
+- `accent` - Accent color
+- `neutral` - Neutral color
+- `base-100` - Base background color
+- `base-200` - Slightly darker background
+- `base-300` - Even darker background
+- `base-content` - Foreground content color
+- `info` - Info color
+- `success` - Success color
+- `warning` - Warning color
+- `error` - Error color
+
+Use these color names with Tailwind utilities:
+- `text-primary` - Primary text color
+- `bg-secondary` - Secondary background color
+- `border-accent` - Accent border color
+
+## Themes
+
+daisyUI supports multiple themes. Colors automatically change based on the selected theme.
+
+Common themes:
+- `light` - Light theme
+- `dark` - Dark theme
+- `cupcake` - Pastel theme
+- `cyberpunk` - Neon theme
+- `retro` - Vintage theme
+- `valentine` - Pink theme
+- `garden` - Green theme
+- `forest` - Dark green theme
+- `aqua` - Blue theme
+- `lofi` - Grayscale theme
+- `pastel` - Soft pastel theme
+- `fantasy` - Purple theme
+- `wireframe` - Minimalist theme
+- `black` - High contrast theme
+- `luxury` - Gold theme
+- `dracula` - Dark purple theme
+- `cmyk` - Print colors theme
+- `autumn` - Orange theme
+- `business` - Professional theme
+- `acid` - Bright green theme
+- `lemonade` - Yellow theme
+- `night` - Blue dark theme
+- `coffee` - Brown theme
+- `winter` - Blue light theme
+- `dim` - Dark theme variant
+- `nord` - Nordic theme
+- `sunset` - Orange gradient theme
+
+## Configuration
+
+Add to your Tailwind config:
+
+```js
+export default {
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+    base: true,
+    styled: true,
+    utils: true,
+  },
+}
+```
+
+## Tips
+
+- Use daisyUI component class names for structure
+- Use Tailwind utilities for customization
+- Stick to daisyUI color names for theme compatibility
+- Test your components with different themes
+- Use semantic color names instead of specific color values
