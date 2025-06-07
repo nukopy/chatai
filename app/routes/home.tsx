@@ -4,7 +4,10 @@ import type { Route } from "./+types/home";
 export function meta(_args: Route.MetaArgs) {
 	return [
 		{ title: "Mentor AI" },
-		{ name: "description", content: "パーソナライズされたメンタリングサービス" },
+		{
+			name: "description",
+			content: "パーソナライズされたメンタリングサービス",
+		},
 	];
 }
 
