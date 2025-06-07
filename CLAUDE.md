@@ -135,9 +135,37 @@ npm run lint
 4. Handle errors gracefully in AI interactions
 5. Keep components focused and reusable
 
+## Deployment
+
+### CI/CD Pipeline
+- **GitHub Actions**: 自動デプロイメントワークフロー
+- **Trigger**: mainブランチへのpush
+- **Platform**: Cloudflare Workers
+- **Required Secrets**:
+  - `CLOUDFLARE_API_TOKEN`
+  - `CLOUDFLARE_ACCOUNT_ID`
+
+### Deployment Commands
+
+```bash
+# Deploy to Cloudflare Workers
+npm run deploy
+
+# Preview deployment
+npm run preview
+```
+
 ## Git Conventions
 
 1. **コミット粒度**: 1コミット = 1機能/1タスク
 2. **ステージング**: `git add -A`は避け、関連ファイルのみを選択的にステージング
 3. **コミットメッセージ**: 変更内容と目的を明確に記載
 4. **ブランチ戦略**: 機能ごとにブランチを作成（必要に応じて）
+5. **CLAUDE.md更新**: .claude配下のコード変更時は必ずCLAUDE.mdも同時に更新・コミット
+
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
+When changing code in .claude directory, ALWAYS commit those changes along with any related CLAUDE.md updates in the same commit.
